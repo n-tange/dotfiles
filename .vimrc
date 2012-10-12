@@ -1,4 +1,5 @@
 set clipboard+=unnamed
+set number
 if has('gui_macvim')
     set showtabline=2	" タブを常に表示
     set imdisable	" IMを無効化
@@ -8,11 +9,15 @@ if has('gui_macvim')
     colorscheme macvim
     set nobackup
 endif
-" pathogen
-"filetype off
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-"filetype plugin on
+" vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/vundle.git/        "vundleのディレクトリ
+call vundle#rc()
+"Bundle ''
+Bundle 'vimshell-ssh'
+filetype plugin indent on     " required!
 
 " vimshell
+
 
